@@ -1,5 +1,5 @@
 ### Library for parsing transaction input data
-[Repository link](https://github.com/Misir8/bsc-input-parse)
+[Repository link](https://github.com/Misir8/input-parse-tools)
 ```npm 
 npm i hex-input-tools
 ```
