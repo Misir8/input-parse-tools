@@ -1,4 +1,4 @@
-###Library for parsing transaction input data in the binance network
+### Library for parsing transaction input data in the binance network
 ```javascript
 const bscInputParse = require('bsc-input-parse');
 
