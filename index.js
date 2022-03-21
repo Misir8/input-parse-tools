@@ -22,7 +22,6 @@ async function getInputParse(walletAddress, apiKey, page, offset) {
             };
             methodInfos.push(methodInfo);
         } catch (e) {
-            console.log(e.message);
         }
     }
     return methodInfos;
