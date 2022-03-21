@@ -1,0 +1,17 @@
+{
+  "name": "bsc-input-parse",
+  "version": "2.0.0",
+  "description": "parse transaction input in binance smart chain",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "ethereum-input-data-decoder": "^0.4.1",
+    "web3": "^1.7.1"
+  }
+}
