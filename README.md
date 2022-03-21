@@ -1,12 +1,16 @@
-### Library for parsing transaction input data in the binance network
+### Library for parsing transaction input data
 [Repository link](https://github.com/Misir8/bsc-input-parse)
+```npm 
+npm i hex-input-tools
+```
 ```javascript
-const bscInputParse = require('bsc-input-parse');
+const hexInputParse = require('hex-input-tools');
 
 
 
-bscInputParse(walletAdress, apiKey, page, offset)
+hexInputParse(chain, walletAdress, apiKey, page, offset)
     .then(console.log);
+//chain = 'binance' | 'eth'
 //response 
 [{
     methodName,
@@ -16,3 +20,4 @@ bscInputParse(walletAdress, apiKey, page, offset)
     paramsValues,
     readibleView,
 }]
+```

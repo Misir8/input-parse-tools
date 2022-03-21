@@ -1,7 +1,7 @@
 {
-  "name": "bsc-input-parse",
-  "version": "2.0.0",
-  "description": "parse transaction input in binance smart chain",
+  "name": "hex-input-tools",
+  "version": "0.1.1",
+  "description": "parse transaction input",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
