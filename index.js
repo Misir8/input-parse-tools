@@ -21,7 +21,7 @@ class InputHexTools {
         };
     }
 
-    async getContactApi() {
+    async getContractAPI() {
         return this.web3.Contract(this.abi, this.contractAddress);
     }
 }
