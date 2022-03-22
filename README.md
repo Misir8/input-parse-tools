@@ -8,16 +8,15 @@ const hexInputParse = require('hex-input-tools');
 
 
 
-hexInputParse(chain, walletAdress, apiKey, page, offset)
+hexInputParse(abi, input)
     .then(console.log);
-//chain = 'binance' | 'eth'
 //response 
-[{
+{
     methodName,
     paramsLength,
     paramsKeys,
     paramsTypes,
     paramsValues,
-    readibleView,
-}]
+    readibleView
+}
 ```
