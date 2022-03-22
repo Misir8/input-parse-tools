@@ -10,11 +10,16 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["defi", "eth", "web3", "binance", "transaction"],
+  "keywords": [
+    "defi",
+    "eth",
+    "web3",
+    "binance",
+    "transaction"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.26.1",
     "ethereum-input-data-decoder": "^0.4.1",
     "web3": "^1.7.1"
   }
