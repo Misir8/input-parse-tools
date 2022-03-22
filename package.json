@@ -1,6 +1,6 @@
 {
   "name": "hex-input-tools",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "parse transaction input",
   "main": "index.js",
   "repository": {

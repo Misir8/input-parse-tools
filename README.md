@@ -1,22 +1,22 @@
 ### Library for parsing transaction input data
 [Repository link](https://github.com/Misir8/input-parse-tools)
 ```npm 
-npm i hex-input-tools save
+npm i hex-input-tools -save
 ```
 ```javascript
-const prettyHex = require('hex-input-tools');
+const InputHexTools = require('hex-input-tools');
 
 
 
-prettyHex(abi, input)
-    .then(console.log);
+const inputhexTools = new InputHexTools(web3, abi, input, contractAddress)
+inputhexTools.prettyHex.then(console.log)
 //response 
 {
     methodName,
-    paramsLength,
-    paramsKeys,
-    paramsTypes,
-    paramsValues,
-    readibleView
+        paramsLength,
+        paramsKeys,
+        paramsTypes,
+        paramsValues,
+        readibleView
 }
 ```
