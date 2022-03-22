@@ -4,11 +4,11 @@
 npm i hex-input-tools save
 ```
 ```javascript
-const hexInputParse = require('hex-input-tools');
+const prettyHex = require('hex-input-tools');
 
 
 
-hexInputParse(abi, input)
+prettyHex(abi, input)
     .then(console.log);
 //response 
 {
