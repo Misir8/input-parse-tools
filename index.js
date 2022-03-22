@@ -8,7 +8,7 @@ class InputHexTools {
         this.contractAddress = contractAddress
     }
 
-    async prettyHex() {
+    prettyHex() {
         const decoder = new InputDataDecoder(this.abi);
         const decodedData = decoder.decodeData(this.input);
         decodedData.inputs =  decodedData.inputs.map((item) => item?._isBigNumber ? this.web3.utils.hexToNumberString(item._hex) : item);
