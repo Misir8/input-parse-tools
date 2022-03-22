@@ -9,7 +9,7 @@ const InputHexTools = require('hex-input-tools');
 
 
 const inputhexTools = new InputHexTools(web3, abi, input, contractAddress)
-inputhexTools.prettyHex
+inputhexTools.prettyHex()
 //response 
 {
     methodName,
