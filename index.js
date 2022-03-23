@@ -31,7 +31,7 @@ class InputHexTools {
 
      getContractAPI() {
         const contract = new this.web3.eth.Contract(this.abi, this.contractAddress);
-        const data = contact._jsonInterface;
+        const data = contract._jsonInterface;
         const read = [];
         const write = [];
         data.forEach((item) => {
