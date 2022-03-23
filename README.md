@@ -19,4 +19,12 @@ inputhexTools.prettyHex()
         paramsValues,
         readibleView
 }
+
+
+inputhexTools.getContractAPI()
+//response
+{
+  read: [{methodName: {inputs: []}}];
+  write: [{methodName: {inputs: []}}]
+}
 ```
