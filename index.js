@@ -1,16 +1,15 @@
 const InputDataDecoder = require('ethereum-input-data-decoder');
 
 class InputHexTools {
-    constructor(web3, abi, input, contractAddress) {
+    constructor(web3, abi, contractAddress) {
         this.web3 = web3;
         this.abi = abi;
-        this.input = input;
         this.contractAddress = contractAddress;
     }
 
-    prettyHex() {
+    prettyHex(input) {
         const decoder = new InputDataDecoder(this.abi);
-        const decodedData = decoder.decodeData(this.input);
+        const decodedData = decoder.decodeData(input);
         decodedData.inputs =  decodedData.inputs.map((item) => item?._isBigNumber ? this.web3.utils.hexToNumberString(item._hex) : item);
         return {
             methodName: decodedData.method,

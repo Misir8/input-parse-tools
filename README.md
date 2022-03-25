@@ -8,8 +8,8 @@ const InputHexTools = require('hex-input-tools');
 
 
 
-const inputhexTools = new InputHexTools(web3, abi, input, contractAddress)
-inputhexTools.prettyHex()
+const inputhexTools = new InputHexTools(web3, abi, contractAddress)
+inputhexTools.prettyHex(input)
 //response 
 {
         methodName,

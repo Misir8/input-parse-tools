@@ -403,7 +403,7 @@ describe('InputHexTools', () => {
   let instance;
   beforeEach(() => {
     const web3 = new Web3();
-    instance = new InputHexTools(web3, abi, input, contractAddress);
+    instance = new InputHexTools(web3, abi, contractAddress);
   })
 
   test('Instance created ok', () => {
@@ -420,7 +420,7 @@ describe('InputHexTools', () => {
   })
 
   test('prettyHex', () => {
-      const result = instance.prettyHex();
+      const result = instance.prettyHex(input);
 
       expect(result.methodName).toBe('approve');
       expect(result.paramsLength).toBe(2);
