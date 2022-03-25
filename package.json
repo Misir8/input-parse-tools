@@ -1,6 +1,6 @@
 {
   "name": "hex-input-tools",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "parse transaction input",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,8 @@
     "url": "https://github.com/Misir8/input-parse-tools"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "keywords": [
     "defi",
@@ -22,5 +23,8 @@
   "dependencies": {
     "ethereum-input-data-decoder": "^0.4.1",
     "web3": "^1.7.1"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
   }
 }

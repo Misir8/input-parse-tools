@@ -6,14 +6,6 @@ class InputHexTools {
         this.abi = abi;
         this.input = input;
         this.contractAddress = contractAddress;
-
-        for (const part of abi) {
-            const {methodName, params} = part;
-
-            this[methodName] = (...params) => {
-                console.log(`Hello from ${methodName}, with params: ${params} `);
-            }
-        }
     }
 
     prettyHex() {
@@ -34,18 +26,21 @@ class InputHexTools {
         const data = contract._jsonInterface;
         const read = [];
         const write = [];
+        const events = [];
         data.forEach((item) => {
             const isRead = item.stateMutability === 'view' || item.stateMutability === 'pure' || item.stateMutability === "constant";
             if (item.type === 'function') {
                 if (isRead) {
                     read.push({[item.name]: {inputs: item.inputs}});
                 } else {
-                    writ.push({[item.name]: {inputs: item.inputs}})
+                    write.push({[item.name]: {inputs: item.inputs}});
                 }
+            } else if (item.type === 'event') {
+                events.push({[item.name]: {inputs: item.inputs}});
             }
         });
 
-        return {read, write};
+        return {read, write, events};
     }
 }
 

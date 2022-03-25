@@ -12,7 +12,7 @@ const inputhexTools = new InputHexTools(web3, abi, input, contractAddress)
 inputhexTools.prettyHex()
 //response 
 {
-    methodName,
+        methodName,
         paramsLength,
         paramsKeys,
         paramsTypes,
@@ -25,6 +25,7 @@ inputhexTools.getContractAPI()
 //response
 {
   read: [{methodName: {inputs: []}}];
-  write: [{methodName: {inputs: []}}]
+  write: [{methodName: {inputs: []}}];
+  events: [{eventName: {inputs: []}}];
 }
 ```
