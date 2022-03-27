@@ -399,10 +399,10 @@ const abi = [
 describe('InputHexTools', () => {
   const input =
     '0x095ea7b300000000000000000000000073feaa1ee314f8c655e354234017be2193c9e24effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
-  const contractAddress = '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC';
+  const contractAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82';
   let instance;
   beforeEach(() => {
-    const web3 = new Web3();
+    const web3 = new Web3('https://bsc-dataseed.binance.org/');
     instance = new InputHexTools(web3, abi, contractAddress);
   })
 
@@ -429,5 +429,18 @@ describe('InputHexTools', () => {
       expect(result.paramsValues[0]).toBe('73feaa1eE314F8c655E354234017bE2193C9E24E');
       expect(result.paramsValues[1]).toBe('115792089237316195423570985008687907853269984665640564039457584007913129639935');
       expect(result.readableView).toBe('approve(spender: 73feaa1eE314F8c655E354234017bE2193C9E24E, amount: 115792089237316195423570985008687907853269984665640564039457584007913129639935)');
+  })
+
+  test('getEvents success', async () => {
+    const params = {
+      eventName: 'Transfer',
+      walletAddress: '0xB503777Ba6ECff9605D3c06aFA3d6bBc137003DD',
+      fromBlock: 16338460,
+      takeBlock: 10
+    };
+    const result = await instance.getEvents(params);
+
+    expect(result.length).toBeGreaterThan(0);
+    expect(result[0].transactionHash).toBe('0x0b503c94e2f422770ec2e2b43da4ac534e48513bb29986a3cfd7e35d53f3d806');
   })
 })

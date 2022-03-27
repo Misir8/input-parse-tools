@@ -1,10 +1,12 @@
 const InputDataDecoder = require('ethereum-input-data-decoder');
 
 class InputHexTools {
+    contract;
     constructor(web3, abi, contractAddress) {
         this.web3 = web3;
         this.abi = abi;
         this.contractAddress = contractAddress;
+        this.contract = new this.web3.eth.Contract(this.abi, this.contractAddress);
     }
 
     prettyHex(input) {
@@ -21,8 +23,7 @@ class InputHexTools {
     }
 
      getContractAPI() {
-        const contract = new this.web3.eth.Contract(this.abi, this.contractAddress);
-        const data = contract._jsonInterface;
+        const data = this.contract._jsonInterface;
         const read = [];
         const write = [];
         const events = [];
@@ -40,6 +41,15 @@ class InputHexTools {
         });
 
         return {read, write, events};
+    }
+
+    async getEvents(params) {
+        const { eventName, walletAddress, fromBlock, takeBlock } = params;
+        const filter = {};
+        if (walletAddress) {
+            filter.from = walletAddress;
+        }
+        return await this.contract.getPastEvents(eventName, {filter, fromBlock, toBlock: fromBlock + takeBlock});
     }
 }
 
