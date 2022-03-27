@@ -1,5 +1,5 @@
-const InputHexTools = require('./index')
-const Web3 = require('web3')
+import { InputHexTools} from './index';
+import Web3 from 'web3';
 
 const abi = [
   {
@@ -400,7 +400,7 @@ describe('InputHexTools', () => {
   const input =
     '0x095ea7b300000000000000000000000073feaa1ee314f8c655e354234017be2193c9e24effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
   const contractAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82';
-  let instance;
+  let instance: InputHexTools;
   beforeEach(() => {
     const web3 = new Web3('https://bsc-dataseed.binance.org/');
     instance = new InputHexTools(web3, abi, contractAddress);
