@@ -64,4 +64,18 @@ export class InputHexTools {
         }
         return await this.contract.getPastEvents(eventName, {filter, fromBlock, toBlock: fromBlock + takeBlock});
     }
+
+    subscribe(web3: Web3, params: {
+        fromBlock: number,
+        address: string | string[],
+        topics: []
+    }) {
+        const { fromBlock, address, topics } = params;
+        return web3.eth.subscribe('logs', {fromBlock, address, topics}, (err, event) => {
+            if (err) {
+                throw Error(err.message);
+            }
+            console.log(event);
+        });
+    }
 }
