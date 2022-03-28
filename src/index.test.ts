@@ -1,4 +1,4 @@
-import { InputHexTools} from './index';
+import { InputHexTools } from './index';
 import Web3 from 'web3';
 
 const abi = [
@@ -395,7 +395,7 @@ const abi = [
     stateMutability: 'nonpayable',
     type: 'function'
   }
-]
+];
 describe('InputHexTools', () => {
   const input =
     '0x095ea7b300000000000000000000000073feaa1ee314f8c655e354234017be2193c9e24effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
@@ -404,11 +404,11 @@ describe('InputHexTools', () => {
   beforeAll(() => {
     const web3 = new Web3('https://bsc-dataseed.binance.org/');
     instance = new InputHexTools(web3, abi, contractAddress);
-  })
+  });
 
   test('Instance created ok', () => {
     expect(instance).toBeDefined();
-  })
+  });
 
   test('getContactApi success', () => {
     const result = instance.getContractAPI();
@@ -417,19 +417,25 @@ describe('InputHexTools', () => {
     expect(result.write.length).toBeGreaterThan(1);
     expect(result.events.length).toBeGreaterThan(1);
     expect(result.read[0].DELEGATION_TYPEHASH).toStrictEqual({ inputs: [] });
-  })
+  });
 
   test('prettyHex', () => {
-      const result = instance.prettyHex(input);
+    const result = instance.prettyHex(input);
 
-      expect(result.methodName).toBe('approve');
-      expect(result.paramsLength).toBe(2);
-      expect(result.paramsTypes[0]).toBe('address');
-      expect(result.paramsTypes[1]).toBe('uint256');
-      expect(result.paramsValues[0]).toBe('73feaa1eE314F8c655E354234017bE2193C9E24E');
-      expect(result.paramsValues[1]).toBe('115792089237316195423570985008687907853269984665640564039457584007913129639935');
-      expect(result.readableView).toBe('approve(spender: 73feaa1eE314F8c655E354234017bE2193C9E24E, amount: 115792089237316195423570985008687907853269984665640564039457584007913129639935)');
-  })
+    expect(result.methodName).toBe('approve');
+    expect(result.paramsLength).toBe(2);
+    expect(result.paramsTypes[0]).toBe('address');
+    expect(result.paramsTypes[1]).toBe('uint256');
+    expect(result.paramsValues[0]).toBe(
+      '73feaa1eE314F8c655E354234017bE2193C9E24E'
+    );
+    expect(result.paramsValues[1]).toBe(
+      '115792089237316195423570985008687907853269984665640564039457584007913129639935'
+    );
+    expect(result.readableView).toBe(
+      'approve(spender: 73feaa1eE314F8c655E354234017bE2193C9E24E, amount: 115792089237316195423570985008687907853269984665640564039457584007913129639935)'
+    );
+  });
 
   test('getEvents success', async () => {
     const params = {
@@ -441,6 +447,8 @@ describe('InputHexTools', () => {
     const result = await instance.getEvents(params);
 
     expect(result.length).toBeGreaterThan(0);
-    expect(result[0].transactionHash).toBe('0x0b503c94e2f422770ec2e2b43da4ac534e48513bb29986a3cfd7e35d53f3d806');
-  })
-})
+    expect(result[0].transactionHash).toBe(
+      '0x0b503c94e2f422770ec2e2b43da4ac534e48513bb29986a3cfd7e35d53f3d806'
+    );
+  });
+});

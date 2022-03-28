@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "ts-node ./src/index.ts",
+    "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "test": "jest"
   },
   "keywords": [
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
+    "prettier": "^2.6.1",
     "ts-node": "^10.7.0"
   }
 }
