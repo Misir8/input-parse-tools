@@ -3,8 +3,8 @@
 ```npm 
 npm i hex-input-tools --save
 ```
-```javascript
-const InputHexTools = require('hex-input-tools');
+```typescript
+import {InputHexTools} from 'hex-input-tools';
 
 
 
@@ -28,4 +28,7 @@ inputhexTools.getContractAPI()
   write: [{methodName: {inputs: []}}];
   events: [{eventName: {inputs: []}}];
 }
+
+
+inputhexTools.getEvents(params)
 ```

@@ -7,6 +7,7 @@ export class InputHexTools {
     private readonly abi: any;
     private readonly contractAddress: string;
     private readonly contract: any;
+    private events: any;
 
     constructor(web3: Web3, abi: any, contractAddress: string) {
         this.web3 = web3;
@@ -46,19 +47,20 @@ export class InputHexTools {
             }
         });
 
+        this.events = events;
         return {read, write, events};
     }
 
     async getEvents(params: {
         eventName: string,
-        walletAddress: string,
+        filter: any,
         fromBlock: number,
         takeBlock: number
     }) {
-        const { eventName, walletAddress, fromBlock, takeBlock } = params;
-        const filter: {[key: string]: any} = {};
-        if (walletAddress) {
-            filter.from = walletAddress;
+        const { eventName, filter, fromBlock, takeBlock } = params;
+        const event = this.events.find((item: any) => item[eventName]);
+        if (!event) {
+            throw Error('Event not found');
         }
         return await this.contract.getPastEvents(eventName, {filter, fromBlock, toBlock: fromBlock + takeBlock});
     }
