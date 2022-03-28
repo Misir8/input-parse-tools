@@ -9,23 +9,23 @@ const abi = [
         indexed: true,
         internalType: 'address',
         name: 'owner',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         internalType: 'address',
         name: 'spender',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: false,
         internalType: 'uint256',
         name: 'value',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'Approval',
-    type: 'event'
+    type: 'event',
   },
   {
     anonymous: false,
@@ -34,23 +34,23 @@ const abi = [
         indexed: true,
         internalType: 'address',
         name: 'delegator',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         internalType: 'address',
         name: 'fromDelegate',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         internalType: 'address',
         name: 'toDelegate',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'DelegateChanged',
-    type: 'event'
+    type: 'event',
   },
   {
     anonymous: false,
@@ -59,23 +59,23 @@ const abi = [
         indexed: true,
         internalType: 'address',
         name: 'delegate',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: false,
         internalType: 'uint256',
         name: 'previousBalance',
-        type: 'uint256'
+        type: 'uint256',
       },
       {
         indexed: false,
         internalType: 'uint256',
         name: 'newBalance',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'DelegateVotesChanged',
-    type: 'event'
+    type: 'event',
   },
   {
     anonymous: false,
@@ -84,17 +84,17 @@ const abi = [
         indexed: true,
         internalType: 'address',
         name: 'previousOwner',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: true,
         internalType: 'address',
         name: 'newOwner',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'OwnershipTransferred',
-    type: 'event'
+    type: 'event',
   },
   {
     anonymous: false,
@@ -104,31 +104,31 @@ const abi = [
         indexed: true,
         internalType: 'address',
         name: 'to',
-        type: 'address'
+        type: 'address',
       },
       {
         indexed: false,
         internalType: 'uint256',
         name: 'value',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'Transfer',
-    type: 'event'
+    type: 'event',
   },
   {
     inputs: [],
     name: 'DELEGATION_TYPEHASH',
     outputs: [{ internalType: 'bytes32', name: '', type: 'bytes32' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'DOMAIN_TYPEHASH',
     outputs: [{ internalType: 'bytes32', name: '', type: 'bytes32' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -136,13 +136,13 @@ const abi = [
       {
         internalType: 'address',
         name: 'spender',
-        type: 'address'
-      }
+        type: 'address',
+      },
     ],
     name: 'allowance',
     outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -150,20 +150,20 @@ const abi = [
       {
         internalType: 'uint256',
         name: 'amount',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'approve',
     outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'address', name: 'account', type: 'address' }],
     name: 'balanceOf',
     outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -171,8 +171,8 @@ const abi = [
       {
         internalType: 'uint32',
         name: '',
-        type: 'uint32'
-      }
+        type: 'uint32',
+      },
     ],
     name: 'checkpoints',
     outputs: [
@@ -180,18 +180,18 @@ const abi = [
       {
         internalType: 'uint256',
         name: 'votes',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'decimals',
     outputs: [{ internalType: 'uint8', name: '', type: 'uint8' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -199,20 +199,20 @@ const abi = [
       {
         internalType: 'uint256',
         name: 'subtractedValue',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'decreaseAllowance',
     outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'address', name: 'delegatee', type: 'address' }],
     name: 'delegate',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -220,46 +220,46 @@ const abi = [
       {
         internalType: 'uint256',
         name: 'nonce',
-        type: 'uint256'
+        type: 'uint256',
       },
       { internalType: 'uint256', name: 'expiry', type: 'uint256' },
       {
         internalType: 'uint8',
         name: 'v',
-        type: 'uint8'
+        type: 'uint8',
       },
       { internalType: 'bytes32', name: 'r', type: 'bytes32' },
       {
         internalType: 'bytes32',
         name: 's',
-        type: 'bytes32'
-      }
+        type: 'bytes32',
+      },
     ],
     name: 'delegateBySig',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'address', name: 'delegator', type: 'address' }],
     name: 'delegates',
     outputs: [{ internalType: 'address', name: '', type: 'address' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'address', name: 'account', type: 'address' }],
     name: 'getCurrentVotes',
     outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'getOwner',
     outputs: [{ internalType: 'address', name: '', type: 'address' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -267,13 +267,13 @@ const abi = [
       {
         internalType: 'uint256',
         name: 'blockNumber',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'getPriorVotes',
     outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -281,13 +281,13 @@ const abi = [
       {
         internalType: 'uint256',
         name: 'addedValue',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'increaseAllowance',
     outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -295,69 +295,69 @@ const abi = [
       {
         internalType: 'uint256',
         name: '_amount',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'mint',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'uint256', name: 'amount', type: 'uint256' }],
     name: 'mint',
     outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'name',
     outputs: [{ internalType: 'string', name: '', type: 'string' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'address', name: '', type: 'address' }],
     name: 'nonces',
     outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'address', name: '', type: 'address' }],
     name: 'numCheckpoints',
     outputs: [{ internalType: 'uint32', name: '', type: 'uint32' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'owner',
     outputs: [{ internalType: 'address', name: '', type: 'address' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'renounceOwnership',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'symbol',
     outputs: [{ internalType: 'string', name: '', type: 'string' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [],
     name: 'totalSupply',
     outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -365,13 +365,13 @@ const abi = [
       {
         internalType: 'uint256',
         name: 'amount',
-        type: 'uint256'
-      }
+        type: 'uint256',
+      },
     ],
     name: 'transfer',
     outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [
@@ -379,22 +379,22 @@ const abi = [
       {
         internalType: 'address',
         name: 'recipient',
-        type: 'address'
+        type: 'address',
       },
-      { internalType: 'uint256', name: 'amount', type: 'uint256' }
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
     ],
     name: 'transferFrom',
     outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'nonpayable',
-    type: 'function'
+    type: 'function',
   },
   {
     inputs: [{ internalType: 'address', name: 'newOwner', type: 'address' }],
     name: 'transferOwnership',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function'
-  }
+    type: 'function',
+  },
 ];
 describe('InputHexTools', () => {
   const input =
@@ -427,13 +427,13 @@ describe('InputHexTools', () => {
     expect(result.paramsTypes[0]).toBe('address');
     expect(result.paramsTypes[1]).toBe('uint256');
     expect(result.paramsValues[0]).toBe(
-      '73feaa1eE314F8c655E354234017bE2193C9E24E'
+      '73feaa1eE314F8c655E354234017bE2193C9E24E',
     );
     expect(result.paramsValues[1]).toBe(
-      '115792089237316195423570985008687907853269984665640564039457584007913129639935'
+      '115792089237316195423570985008687907853269984665640564039457584007913129639935',
     );
     expect(result.readableView).toBe(
-      'approve(spender: 73feaa1eE314F8c655E354234017bE2193C9E24E, amount: 115792089237316195423570985008687907853269984665640564039457584007913129639935)'
+      'approve(spender: 73feaa1eE314F8c655E354234017bE2193C9E24E, amount: 115792089237316195423570985008687907853269984665640564039457584007913129639935)',
     );
   });
 
@@ -442,13 +442,13 @@ describe('InputHexTools', () => {
       eventName: 'Transfer',
       filter: { from: '0xB503777Ba6ECff9605D3c06aFA3d6bBc137003DD' },
       fromBlock: 16338460,
-      takeBlock: 10
+      takeBlock: 10,
     };
     const result = await instance.getEvents(params);
 
     expect(result.length).toBeGreaterThan(0);
     expect(result[0].transactionHash).toBe(
-      '0x0b503c94e2f422770ec2e2b43da4ac534e48513bb29986a3cfd7e35d53f3d806'
+      '0x0b503c94e2f422770ec2e2b43da4ac534e48513bb29986a3cfd7e35d53f3d806',
     );
   });
 });

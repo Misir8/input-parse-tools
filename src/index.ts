@@ -19,7 +19,7 @@ export class InputHexTools {
     const decoder = new InputDataDecoder(this.abi);
     const decodedData = decoder.decodeData(input);
     decodedData.inputs = decodedData.inputs.map((item) =>
-      item?._isBigNumber ? this.web3.utils.hexToNumberString(item._hex) : item
+      item?._isBigNumber ? this.web3.utils.hexToNumberString(item._hex) : item,
     );
     return {
       methodName: decodedData.method,
@@ -28,7 +28,7 @@ export class InputHexTools {
       paramsValues: decodedData.inputs,
       readableView: `${decodedData.method}(${decodedData.inputs
         .map((input, i) => decodedData.names[i] + ': ' + input)
-        .join(', ')})`
+        .join(', ')})`,
     };
   }
 
@@ -71,7 +71,7 @@ export class InputHexTools {
     return await this.contract.getPastEvents(eventName, {
       filter,
       fromBlock,
-      toBlock: fromBlock + takeBlock
+      toBlock: fromBlock + takeBlock,
     });
   }
 
@@ -81,7 +81,7 @@ export class InputHexTools {
       fromBlock: number;
       address: string | string[];
       topics: [];
-    }
+    },
   ) {
     const { fromBlock, address, topics } = params;
     return web3.eth.subscribe(
@@ -92,7 +92,7 @@ export class InputHexTools {
           throw Error(err.message);
         }
         console.log(event);
-      }
+      },
     );
   }
 }
